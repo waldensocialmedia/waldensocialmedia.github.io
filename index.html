@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
+<audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
 <h1>WALDENSOCIALMEDIA </h1>
 
 <p>
@@ -19,20 +21,39 @@ es waldensocialmedia el que habla, estaré subiendo las fotos que voy sacando .
         <img src="foto1.jpg">
         <p>una foto que me sacaron en Santiago de Compistola.</p>
     </div>
+<div class="post">
+    <img src="foto2.jpg">
+    <p>El pueblo del demonio donde me pudro.</p>
+</div>
+
+<div class="post">
+    <img src="foto3.jpg">
+    <p>Me pareció chula.</p>
+</div>
+
+<div class="post">
+    <img src="gif1.gif">
+    <p>Un gif buuuuu.</p>
+</div>
 
 </div>
 
 </body>
 </html>
 
-<div style="display:flex; justify-content:flex-end;">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/Ms1lkOrO6qI"
-    title="YouTube video"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+<div id="contador" style="margin-top:40px; font-size:18px;">
+Visitas: <span id="visitas">0</span>
 </div>
+
+<script>
+let visitas = localStorage.getItem("contador_visitas");
+
+if (visitas === null) {
+    visitas = 1;
+} else {
+    visitas = parseInt(visitas) + 1;
+}
+
+localStorage.setItem("contador_visitas", visitas);
+document.getElementById("visitas").innerText = visitas;
+</script>
